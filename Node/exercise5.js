@@ -46,10 +46,12 @@
   » To verify your program, run: learnyounode verify program.js
   » For help run: learnyounode help
 */
+var fs = require('fs')
+var path = require('path')
 
 
 function getDirectoryFiles(printout) {
-  var fs = require('fs')
+
 
   fs.readdir(process.argv[2].toString(), function doneReading(err, contents){
     console.log(err)
@@ -59,7 +61,16 @@ function getDirectoryFiles(printout) {
 
 function logoutput(thefiles) {
   console.log(thefiles)
-  thefiles.forEach(function(a) {console.log(a)})
+  var word = "txt"
+  var patt = /txt/i
+  var filteredFiles = thefiles.filter(function(yum) {if(yum.match(new RegExp(word))){
+      return true
+    }
+    else{
+      return false
+    }})
+
+  filteredFiles.forEach(function(a) {console.log(a)})
 }
 
 getDirectoryFiles(logoutput);
