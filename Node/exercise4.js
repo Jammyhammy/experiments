@@ -1,8 +1,7 @@
 function countNewLines(printout) {
   var fs = require('fs')
   fs.readFile(process.argv[2].toString(), function doneReading(err, contents){
-    var lines =
-    printout(fs.readFileSync(process.argv[2]).toString().split('\n').length.toString() - 1)
+    var lines = printout(contents.toString().split('\n').length.toString() - 1)
   })
 }
 
