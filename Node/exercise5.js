@@ -54,16 +54,17 @@ function getDirectoryFiles(printout) {
 
 
   fs.readdir(process.argv[2].toString(), function doneReading(err, contents){
-    console.log(err)
+    //console.log(err)
     var lines = printout(contents)
   })
 }
 
 function logoutput(thefiles) {
-  console.log(thefiles)
-  var word = "txt"
+  //console.log(thefiles)
+  var word = "." + process.argv[3].toString()
   var patt = /txt/i
-  var filteredFiles = thefiles.filter(function(yum) {if(yum.match(new RegExp(word))){
+//  var filteredFiles = thefiles.filter(function(yum) {if(yum.index(new RegExp(word))){
+var filteredFiles = thefiles.filter(function(yum) {if(yum.indexOf(word) > -1){
       return true
     }
     else{
