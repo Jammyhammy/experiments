@@ -63,15 +63,15 @@ function logoutput(thefiles) {
   //console.log(thefiles)
   var word = "." + process.argv[3].toString()
   var patt = /txt/i
-//  var filteredFiles = thefiles.filter(function(yum) {if(yum.index(new RegExp(word))){
-var filteredFiles = thefiles.filter(function(yum) {if(yum.indexOf(word) > -1){
-      return true
-    }
-    else{
-      return false
-    }})
+  //  var filteredFiles = thefiles.filter(function(yum) {if(yum.index(new RegExp(word))){
+  var filteredFiles = thefiles.filter(function(yum) {if(yum.indexOf(word) > -1){
+        return true
+      }
+      else{
+        return false
+      }})
 
-  filteredFiles.forEach(function(a) {console.log(a)})
+    filteredFiles.forEach(function(a) {console.log(a)})
 }
 
 getDirectoryFiles(logoutput);
