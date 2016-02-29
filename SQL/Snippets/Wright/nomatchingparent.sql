@@ -1,0 +1,3 @@
+SELECT OrderLine.recno, OrderLine.[SYS Order ID], OrderLine.[Line item sequence], OrderLine.[Cust Inv ID], OrderLine.[Cust Inv Desc], OrderLine.[Ven Inv ID], OrderLine.[Ven Inv Desc], OrderLine.Qtyordered, OrderLine.[Qty shipped], OrderLine.[Qty Received], OrderLine.[UOM SKU], OrderLine.Qty1, OrderLine.UOM1, OrderLine.Qty2, OrderLine.UOM2, OrderLine.Qty3, OrderLine.UOM3, OrderLine.Qty4, OrderLine.UOM4, OrderLine.BoxPP, OrderLine.[Fill From], OrderLine.[notes to Shipping], OrderLine.comment, OrderLine.[Unit Price], OrderLine.[Web OrderID]
+FROM OrderLine LEFT OUTER JOIN Orders ON OrderLine.[SYS Order ID] = Orders.[SYS Order ID]
+WHERE [Orders].[SYS Order ID] IS NULL;
